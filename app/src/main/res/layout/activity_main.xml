@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorAccent"
+    tools:context=".MainActivity">
+
+    <com.lm.longimage.LongImageView
+        android:id="@+id/longImageView"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+
+    <ScrollView
+        android:id="@+id/ivNorImageViewScrollView"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivNorImageView"
+                android:adjustViewBounds="true"
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:onClick="longView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="longView" />
+
+        <Button
+            android:onClick="norView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="norView" />
+
+        <Button
+            android:onClick="clearAllView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="clearAllView" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/logtext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#8000897B"
+        android:layout_gravity="center"
+        android:textColor="#FFF"
+        android:layout_margin="20dp" />
+</FrameLayout>
