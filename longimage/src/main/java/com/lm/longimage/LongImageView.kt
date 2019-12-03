@@ -48,6 +48,9 @@ class LongImageView : RecyclerView {
         options.inPreferredConfig = Bitmap.Config.RGB_565
     }
 
+    /**
+     * 存图片list
+     */
     var splitImages = ArrayList<Int>()
 
     fun setImageRaw(raw: Int) {
@@ -76,7 +79,7 @@ class LongImageView : RecyclerView {
         // 获取屏幕三分之一高度为默认高度
         val screenHeight = getScreenHeight(context)
         if (screenHeight > 500) {
-            needSplitHeight = screenHeight / 3
+            needSplitHeight = screenHeight / 4
             Log.d(TAG, "needSplitHeight = $needSplitHeight")
         }
     }
@@ -126,10 +129,7 @@ class LongImageView : RecyclerView {
      * itemCount: 总的item数
      * lastItemHeight: 最后一个item高度
      */
-    public fun getCurrentBitmap(
-        i: Int,
-        itemCount: Int
-    ): Bitmap? {
+    public fun getCurrentBitmap(i: Int, itemCount: Int): Bitmap? {
         mRect.top = i * needSplitHeight
         mRect.bottom = mRect.top + needSplitHeight
         if (i == itemCount) {

@@ -2,6 +2,7 @@ package com.lm.longimage
 
 import android.graphics.Bitmap
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -28,6 +29,7 @@ class ImageAdapter : BaseQuickAdapter<Int, BaseViewHolder> {
             view?.setImageBitmap(currentBitmap)
             view?.tag = currentBitmap
         }
+        println("ImageAdapter position = $item ")
     }
 
     override fun bindToRecyclerView(recyclerView: RecyclerView?) {
